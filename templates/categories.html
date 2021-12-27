@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block title %}Категории{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for category in categories %}
+            <li>
+                <a href="/categories/{{ category.id }}/">{{ category.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
