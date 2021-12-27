@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Товары в категории {{ category.name }}
+{% endblock %}
+
+{% block content %}
+    <h1>Товары в категории {{ category.name }}</h1>
+    {% if not products %}
+        <div>Товаров в данной категории нет.</div>
+    {% endif %}
+    <ul class="row py-1">
+        {% for product in products %}
+            <li>
+                <a href="/products/{{ product.id }}/">{{ product.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
